@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="/static/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/static/css/style.css">
+		<title>Temperature</title>
+		<div class="navbar">
+			<a class="active" href="">Home</a>
+			<a href="/about">About</a>
+			<a href="/contact">Contact</a>
+		</div>
+	</head>
+
+	<body onload=loadPage()>
+		<div class="full">
+			<div class="container head">
+				<p>Welcome, here are the temperatures.</p>
+			</div>
+		</div>
+
+		<div class="container cont outer">
+			<div class="container cont inner">
+				<button id="refresh">Refresh</button>
+
+				<table id="tempTable">
+					<tr>
+						<th>Day</th>
+						<th>Time</th>
+						<th>Room</th>
+						<th>Temperature</th>
+						<th>Humidity</th>
+					</tr>
+					<tr id="row">
+						<tr>
+							<td id="roomDay">{{roomDay}}</td>
+							<td id="roomTime">{{roomTime}}</td>
+							<td id="roomName">{{roomName}}</td>
+							<td id="roomTemp">{{roomTemp}}</td>
+							<td id="roomHumidity">{{roomHumidity}}%</td>
+						</tr>
+					</tr>
+
+				</table>
+
+			</div>
+		</div>
+
+		<button id="bt">Modal</button>
+
+		<div id="myModal" class="modal">
+			<div class="modal-content">
+				<span class="close">&times;</span>
+				<p>Some text in the Modal..</p>
+			</div>
+		</div>
+
+		<script>
+var ajaxCall = function(){
+	$.ajax({url: "get_temp", success: function(result){
+		var spl = result.split(" ");
+		var tempOrg = $("#tempTable").find("tr").last()[0].cells[3].innerHTML;
+		var humOrg = $("#tempTable").find("tr").last()[0].cells[4].innerHTML.replace("%","");
+		if(spl[2] != tempOrg && spl[3] != humOrg){
+			$("#tempTable").append('<tr><td>'
+					+ spl[0]
+					+ '</td><td>'
+					+ spl[1]
+					+ '</td><td>'
+					+ ''
+					+ '</td><td>'
+					+ spl[2]
+					+ '</td><td>'
+					+ spl[3]
+					+ '%</td></tr>')
+		}
+	console.log($("#tempTable").find("tr").last());
+	console.log($("#tempTable").find("tr").last()[0].cells[3].innerHTML);
+	console.log($("#tempTable").find("tr").last()[0].cells[4].innerHTML);
+
+	}});
+}
+
+var interval = 1000 * 5;
+setInterval(ajaxCall, interval);
+		</script>
+
+
+		<script>
+var refreshBtn = document.getElementById('refresh');
+refreshBtn.onclick = function(){
+	$.ajax({url: "get_temp", success: function(result){
+		var spl = result.split(" ");
+		$("#tempTable").append('<tr><td>' 
+				+ spl[0] 
+				+ '</td><td>' 
+				+ spl[1]  
+				+ '</td><td>' 
+				+ ''
+				+ '</td><td>' 
+				+ spl[2]
+				+ '</td><td>' 
+				+ spl[3]
+				+ '%</td></tr>')
+	}});
+}
+		</script>
+
+		<!--$("#roomDay").html(spl[0]);
+	  $("#roomTime").html(spl[1]);
+	  $("#roomTemp").html(spl[2]);
+	  $("#roomHumidity").html(spl[3] + '%');--!>
+
+
+
+
+	  <script>
+//Use this for settings changes
+var modal = document.getElementById('myModal');
+var btn = document.getElementById('bt');
+var span = document.getElementsByClassName('close')[0];
+
+btn.onclick = function(){
+	modal.style.display = "block";
+}
+
+span.onclick = function(){
+	modal.style.display = "none";
+}
+
+	  </script>
+
+	</body>
+
+</html>

@@ -1,8 +1,25 @@
+<<<<<<< HEAD
+=======
+## TEMP
+*.json
+*.swp
+
+# VSCode
+.vscode
+
+>>>>>>> ea51a352c0f7e2f7f0e1abfe46d21a32c4123f6c
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
 
+<<<<<<< HEAD
+=======
+# CONFIG
+*.ini
+*.tmp
+
+>>>>>>> ea51a352c0f7e2f7f0e1abfe46d21a32c4123f6c
 # C extensions
 *.so
 

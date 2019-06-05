@@ -1,0 +1,193 @@
+/* Div CSS */
+#containerPercentage{
+	margin: 20px;
+	width: 200px;
+	height: 100px;
+
+}
+
+#moe-header1{
+	width: 2%;
+}
+#moe-header2{
+	width: 27%;
+}
+#moe-header3{
+	width: 5%;
+}
+#moe-header4{
+	width: 25%;
+}
+#moe-header5{
+	width: 7%;
+}
+#moe-header6{
+	width: 5%;
+}
+#moe-header7{
+	width: 5%;
+}
+
+th{
+	background-color: antiquewhite;
+}
+
+body{
+	background-color: lightblue;
+}
+
+.modal {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+	background-color: #fefefe;
+	margin: 15% auto; /* 15% from the top and centered */
+	padding: 20px;
+	border: 1px solid #888;
+	width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+	color: #aaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.navbar a{
+	color: white;
+}
+
+.navbar{
+	background-color: slategray;
+}
+
+.container{
+	background-color: white;
+}
+
+.container.eventLog{
+	border: double;
+	border-width: 1px;
+	max-width: 31%;
+	overflow-x: hidden;
+	float: right;
+	font-size: 11px;
+	margin-right: 7px;
+}
+
+.container.eventLog p{
+	margin:0px;
+}
+
+.container.head{
+	background-color: lightblue;
+}
+
+.container.cont{
+	margin: 10px;
+	max-width: 700px;
+}
+
+.container.login{
+	max-width: 32%;
+	float: left;
+}
+
+.container.cont.outer{
+	border: double;
+	border-width: 1px;
+}
+
+.container.cont.inner{
+	margin-top:15px;
+}
+
+.container.head p{
+	font-size: 25px;
+}
+
+.container form{
+	display: inline;
+}
+
+.container.button{
+	height: 36px;
+}
+
+#tournId{
+	width: 156%;
+}
+
+#loginButton{
+	float: right;
+	margin: 10px;
+}
+
+#getTournForm{
+	float: left;
+	margin-left: -15px;
+}
+
+#refreshForm{
+	float: right;
+	margin-right: -56%;
+}
+
+hr{
+	border: 0;
+	border-top: 1px solid black;
+	margin-top: 0px;
+	margin-bottom: 7px;
+}
+
+.container #errorCode{
+	background-color:red;
+	font-size:18px;
+	width: 41%;
+}
+
+.full{
+	width:100%;
+}
+
+/* Table CSS */
+table {
+	width: 625px;
+	margin: 20px;
+	font-family: arial, sans-serif;
+	border-collapse: collapse;
+}
+
+td, th {
+	border: 1px solid #dddddd;
+	text-align: left;
+	padding: 8px;
+}
+
+#row{
+	background-color: #dddddd;
+}
+
+/*tr:nth-child(even) {
+background-color: #dddddd;
+}(/
