@@ -14,15 +14,16 @@ class LED(Resource):
 
     def post(self):
         args = parser.parse_args()
-        color = args['message']
-        print("TURNING ON LED", color)
+        message = args['message']
+        splitMessage = message.split()
         colorMapping = {'red': 18, 'blue': 23, 'white': 24, 'green': 25}
 
-        if color in colorMapping:
-            print(colorMapping[color])
-            color = ledPower.LED(colorMapping[color])
-            color.on_off(1)
-        
+        for word in splitMessage[:8]:
+            if word in colorMapping:
+                print(colorMapping[word])
+                color = ledPower.LED(colorMapping[word])
+                print("TURNING ON LED", color)
+                color.on_off(1)
         return 201
 
 api.add_resource(LED, '/leds')
