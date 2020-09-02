@@ -23,10 +23,16 @@ class LED:
 
 def main():
     red = LED(18)
-    red.on_off(3)
+    red.on_off(1)
 
-    blue = LED(11)
-    blue.on_off(3)
+    blue = LED(23)
+    blue.on_off(1)
+
+    white = LED(24)
+    white.on_off(1)
+
+    green = LED(25)
+    green.on_off(1)
 
 if __name__ == '__main__':
     main()
