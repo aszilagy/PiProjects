@@ -38,8 +38,8 @@ class MyBot(pydle.Client):
 
         keywordList = ['blue', 'red', 'white', 'green']
         for word in message.split():
-            if word in keywordList:
-                url = 'http://192.168.86.145:5000/leds'
+            if word.lower() in keywordList:
+                url = 'http://192.168.86.147:5000/leds'
                 requests.post(url, data={'message': message})
                 break
 
