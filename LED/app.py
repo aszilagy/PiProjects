@@ -19,10 +19,10 @@ class LED(Resource):
         colorMapping = {'red': 18, 'blue': 23, 'white': 24, 'green': 25}
 
         for word in splitMessage[:8]:
-            if word in colorMapping:
-                print(colorMapping[word])
-                color = ledPower.LED(colorMapping[word])
-                print("TURNING ON LED", color)
+            if word.lower() in colorMapping:
+                print(colorMapping[word.lower()])
+                color = ledPower.LED(colorMapping[word.lower()])
+                print("TURNING ON LED", word)
                 color.on_off(1)
         return 201
 
